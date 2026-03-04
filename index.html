@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="./IMAGES/applogo.png" alt="App Logo">
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <button class="nav-btn desktop-only">Book Appointment</button>
+</nav>
+
+<header id="home" class="hero">
+    <div class="hero-content">
+        <h1>LARGE HEADING BRANDING</h1>
+        <p>Small description goes here.</p>
+        <button class="cta-btn">Book Appointment</button>
+    </div>
+    <div class="hero-graphics">
+        <div class="graphic-box">GRAPHICS</div>
+    </div>
+</header>
+
+<section id="services" class="full-section"><h2>SERVICES</h2></section>
+<section id="doctors" class="full-section"><h2>DOCTORS PAGE</h2></section>
+<section id="contact" class="full-section"><h2>CONTACT PAGE</h2></section>
+<section id="about" class="full-section"><h2>ABOUT US</h2></section>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('is-active');
+    });
+
+    // Closes the menu when you click a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('is-active');
+        });
+    });
+</script>
+
+</body>
+</html>
